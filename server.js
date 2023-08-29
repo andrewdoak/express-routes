@@ -18,13 +18,6 @@ app.get('/', function(req, res) {
     res.send('<h1>Hello, stranger.</h1>');
 });
 
-// NOTES
-/* 
-From Josh
-app.get('/item/:id', (req, res) => {
-  res.send("This route's id parameter " + req.params.id);
-});
-*/
 
 // Greeting: Step 2
 app.get('/greetings/:name', function(req, res) {
@@ -73,3 +66,18 @@ app.get('/magic', function(req, res) {
 app.listen(3000, function () {
   console.log('Listening on port 3000');
 });
+
+// FROM LECTURE: FOR REFACTOR
+/* 
+app.get('/:indexOfPlantsArray', (req, res) => {
+    res.send(plants[req.params.indexOfPlantsArray]);
+});
+*/
+
+// NOTES: ACCESSING/PRINTING PARAM
+/* 
+From Josh
+app.get('/item/:id', (req, res) => {
+  res.send("This route's id parameter " + req.params.id);
+});
+*/
