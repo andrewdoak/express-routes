@@ -18,22 +18,27 @@ app.get('/', function(req, res) {
     res.send('<h1>Hello, stranger.</h1>');
 });
 
+// NOTES
 /* 
 From Josh
 app.get('/item/:id', (req, res) => {
   res.send("This route's id parameter " + req.params.id);
 });
 */
+
 // Greeting: Step 2
 app.get('/greetings/:name', function(req, res) {
     res.send(`<Name>Hello, ${req.params.name}! It is so great to see you.</Name>`);
 });
 
+
+// NOTES
 /*  
 /tip/:total/:tipPercentage
 Parameters that come from the browser are STILL STRINGS
 Have to convert to a number
 */
+
 // Tip Calculator: 
 app.get('/tip', function(req, res) {
     res.send(`<h1>How was your meal?</h1>`);
@@ -50,6 +55,18 @@ app.get('/tip/:total/:tipPercentage', function(req, res) {
 // app.get('/tip/:tipPercentage', function(req, res) {
 //     res.send(`<h1>Your tip was $${req.params.tipPercentage}</h1>`)
 // })
+
+
+// EightBall Array: Random Response
+app.get('/magic', function(req, res) {
+    // Create responses array
+    const responses = ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely","You may rely on it", "As I see it yes", "Most likely", "Outlook good","Yes", "Signs point to yes", "Reply hazy try again", "Ask again later","Better not tell you now", "Cannot predict now", "Concentrate and ask again","Don't count on it", "My reply is no", "My sources say no","Outlook not so good", "Very doubtful"];
+
+    // BIG UPS STEFON! (literally the last minute of our breakout rooms!)
+    let randomResponse = responses[Math.floor(Math.random()*responses.length)]
+
+    res.send(`<h1>Will I be a Millionaire? <br> Magic Eight Ball Says: "${randomResponse}"</h1>`);
+});
 
 // Tell the app to listen on port 3000
 // for HTTP requests from clients
