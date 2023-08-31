@@ -81,6 +81,9 @@ app.listen(3000, function () {
 
 // FROM LECTURE: FOR REFACTOR
 /* 
+CODE-ALONG AFTER DUE DATE:
+https://pscohorts.slack.com/archives/C056A692JAX/p1693499699584779?thread_ts=1693497189.036329&cid=C056A692JAX
+
 app.get('/:indexOfPlantsArray', (req, res) => {
     res.send(plants[req.params.indexOfPlantsArray]);
 });
